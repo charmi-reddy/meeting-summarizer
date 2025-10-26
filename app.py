@@ -269,13 +269,14 @@ with col1:
 
 with col2:
     st.info("""
-    **📌 How to Use:**
+       How to Use:
     
     1. Choose your input method from the sidebar
     2. Upload a file or paste your transcript
     3. Click "Generate Summary" to get AI-powered insights
     
-    **💡 Tips:**
+      Tips:
+      
     - Include speaker names for better context
     - Longer transcripts yield more detailed summaries
     - Works with any meeting format
