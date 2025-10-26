@@ -3,8 +3,7 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-
-API_KEY = os.getenv("CEREBRAS_API_KEY")
+API_KEY = st.secrets["CEREBRAS_API_KEY"]
 if not API_KEY:
     raise ValueError("Missing CEREBRAS_API_KEY in .env. Add CEREBRAS_API_KEY=your_key_here")
 
