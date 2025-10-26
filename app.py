@@ -455,6 +455,6 @@ st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("""
 <div style='text-align:center; padding: 1rem 0; opacity: 0.6; font-size: 0.9rem;'>
     <p style='margin: 0.2rem 0;'>Built with Cerebras AI and Streamlit</p>
-    <p style='margin: 0.2rem 0;'>Crafted with 💗 by P Charmi Reddy</p>
+    <p style='margin: 0.2rem 0;'>Crafted with 💗</p>
 </div>
 """, unsafe_allow_html=True)
