@@ -243,7 +243,7 @@ st.set_page_config(
 )
 
 # ---- Sidebar ----
-st.sidebar.title("📋 Dashboard")
+st.sidebar.title("Dashboard")
 st.sidebar.markdown("---")
 
 # Input Method Selection
@@ -255,11 +255,11 @@ option = st.sidebar.radio(
 
 # History Section in Sidebar
 st.sidebar.markdown("---")
-st.sidebar.subheader("📜 Summary History")
+st.sidebar.subheader("Summary History")
 
 if st.session_state['summary_history']:
     for idx, item in enumerate(reversed(st.session_state['summary_history'])):
-        with st.sidebar.expander(f"📝 {item['timestamp']}", expanded=False):
+        with st.sidebar.expander(f"{item['timestamp']}", expanded=False):
             st.markdown(f"**Transcript Preview:**")
             st.text(item['transcript'][:100] + "...")
             st.markdown(f"**Summary:**")
@@ -269,7 +269,7 @@ else:
 
 # Clear History Button
 if st.session_state['summary_history']:
-    if st.sidebar.button("🗑️ Clear History", use_container_width=True):
+    if st.sidebar.button("Clear History", use_container_width=True):
         st.session_state['summary_history'] = []
         st.rerun()
 
@@ -284,7 +284,7 @@ st.markdown("""
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
                 margin-bottom: 0.3rem;'>
-        💬 Meeting Summarizer
+          Meeting Summarizer
     </h1>
     <p style='font-size: 1.2em; opacity: 0.8; font-weight: 500;'>
         Generate intelligent summaries & action items in seconds
@@ -295,7 +295,7 @@ st.markdown("""
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # ---- Input Section ----
-st.subheader("📝 Input Your Transcript")
+st.subheader(" Input Your Transcript")
 
 col1, col2 = st.columns([1.2, 1.8], gap="large")
 
@@ -309,7 +309,7 @@ with col1:
         )
         if uploaded_file:
             transcript = uploaded_file.read().decode("utf-8")
-            st.success(f"✅ File uploaded: {uploaded_file.name}")
+            st.success(f" File uploaded: {uploaded_file.name}")
     
     if option == "Paste Text":
         st.markdown("**Paste your meeting transcript below:**")
@@ -323,14 +323,14 @@ with col1:
 
 with col2:
     st.info("""
-    **📌 How to Use:**
+    ** How to Use:**
     
     1. Choose your input method from the sidebar
     2. Upload a file or paste your transcript
     3. Click "Generate Summary" to get AI-powered insights
     4. View previous summaries in the History section
     
-    **💡 Tips:**
+    ** Tips:**
     - Include speaker names for better context
     - Longer transcripts yield more detailed summaries
     - Works with any meeting format
@@ -339,12 +339,12 @@ with col2:
 # ---- Results Area ----
 if transcript:
     st.markdown("<hr>", unsafe_allow_html=True)
-    st.subheader("📊 Analysis Results")
+    st.subheader(" Analysis Results")
     
     result_col1, result_col2 = st.columns([1, 1], gap="large")
     
     with result_col1:
-        st.markdown("**📄 Original Transcript**")
+        st.markdown("** Original Transcript**")
         st.text_area(
             "Transcript display", 
             transcript, 
@@ -354,7 +354,7 @@ if transcript:
         )
     
     with result_col2:
-        st.markdown("**🤖 AI-Generated Summary**")
+        st.markdown("** AI-Generated Summary**")
         
         # Manual Submit Button (no Enter key submission)
         if st.button("✨ Generate Summary", use_container_width=True, key="generate_btn"):
@@ -375,13 +375,13 @@ if transcript:
                     st.success(summary)
                     
                 except Exception as e:
-                    st.error(f"❌ Error: {e}")
+                    st.error(f" Error: {e}")
 
 # ---- Footer ----
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("""
 <div style='text-align:center; padding: 1rem 0; opacity: 0.7;'>
-    <p style='margin: 0.3rem 0;'>Built with 🧠 Cerebras AI + Streamlit</p>
+    <p style='margin: 0.3rem 0;'>Built with Cerebras AI + Streamlit</p>
     <p style='margin: 0.3rem 0;'>Crafted with 💗 by <strong>P Charmi Reddy</strong></p>
 </div>
 """, unsafe_allow_html=True)
