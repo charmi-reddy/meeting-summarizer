@@ -1,6 +1,4 @@
 import streamlit as st
-api_key = st.secrets["CEREBRAS_API_KEY"]
-
 from cerebras_client import call_cerebras
 
 # ---- Futuristic CSS ----
