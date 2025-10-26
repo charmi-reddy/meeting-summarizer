@@ -1,5 +1,10 @@
 import streamlit as st
 from cerebras_client import call_cerebras
+from datetime import datetime
+
+# ---- Initialize Session State for History ----
+if 'summary_history' not in st.session_state:
+    st.session_state['summary_history'] = []
 
 # ---- Adaptive Light/Dark Theme CSS with Mobile Responsiveness ----
 st.markdown("""
@@ -94,6 +99,21 @@ hr {
     margin: 1.8em 0 1.2em 0;
 }
 
+/* History Items - Light */
+.history-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.history-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #6366f1;
+}
+
 /* ============================================
    DARK THEME (System Preference)
    ============================================ */
@@ -159,6 +179,17 @@ hr {
     hr {
         border-top: 2px solid #334155;
     }
+    
+    /* History Items - Dark */
+    .history-item {
+        background: #1e293b;
+        border: 1px solid #334155;
+    }
+    
+    .history-item:hover {
+        box-shadow: 0 4px 12px rgba(129, 140, 248, 0.2);
+        border-color: #818cf8;
+    }
 }
 
 /* ============================================
@@ -214,11 +245,33 @@ st.set_page_config(
 # ---- Sidebar ----
 st.sidebar.title("📋 Dashboard")
 st.sidebar.markdown("---")
+
+# Input Method Selection
 option = st.sidebar.radio(
     "Choose input method:",
     ("Upload File", "Paste Text"),
     help="Select how you'd like to provide your meeting transcript"
 )
+
+# History Section in Sidebar
+st.sidebar.markdown("---")
+st.sidebar.subheader("📜 Summary History")
+
+if st.session_state['summary_history']:
+    for idx, item in enumerate(reversed(st.session_state['summary_history'])):
+        with st.sidebar.expander(f"📝 {item['timestamp']}", expanded=False):
+            st.markdown(f"**Transcript Preview:**")
+            st.text(item['transcript'][:100] + "...")
+            st.markdown(f"**Summary:**")
+            st.info(item['summary'])
+else:
+    st.sidebar.info("No summaries generated yet.")
+
+# Clear History Button
+if st.session_state['summary_history']:
+    if st.sidebar.button("🗑️ Clear History", use_container_width=True):
+        st.session_state['summary_history'] = []
+        st.rerun()
 
 transcript = ""
 
@@ -264,18 +317,20 @@ with col1:
             "Transcript content", 
             height=280, 
             placeholder="Paste your meeting transcript here...\n\nExample:\nJohn: Let's discuss Q4 goals.\nSarah: I agree, we should focus on...",
-            label_visibility="collapsed"
+            label_visibility="collapsed",
+            key="transcript_input"
         )
 
 with col2:
     st.info("""
-    **How to Use:**
+    **📌 How to Use:**
     
     1. Choose your input method from the sidebar
     2. Upload a file or paste your transcript
     3. Click "Generate Summary" to get AI-powered insights
+    4. View previous summaries in the History section
     
-    **Tips:**
+    **💡 Tips:**
     - Include speaker names for better context
     - Longer transcripts yield more detailed summaries
     - Works with any meeting format
@@ -301,14 +356,24 @@ if transcript:
     with result_col2:
         st.markdown("**🤖 AI-Generated Summary**")
         
-        if st.button("✨ Generate Summary", use_container_width=True):
+        # Manual Submit Button (no Enter key submission)
+        if st.button("✨ Generate Summary", use_container_width=True, key="generate_btn"):
             with st.spinner("🔄 Analyzing transcript and generating summary..."):
                 try:
                     summary = call_cerebras(
                         f"Summarize this meeting transcript concisely, highlighting key points and action items:\n\n{transcript}", 
                         max_tokens=300
                     )
+                    
+                    # Save to history
+                    st.session_state['summary_history'].append({
+                        'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                        'transcript': transcript,
+                        'summary': summary
+                    })
+                    
                     st.success(summary)
+                    
                 except Exception as e:
                     st.error(f"❌ Error: {e}")
 
