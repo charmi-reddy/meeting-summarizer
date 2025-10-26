@@ -6,6 +6,10 @@ from datetime import datetime
 if 'summary_history' not in st.session_state:
     st.session_state['summary_history'] = []
 
+if 'show_sidebar' not in st.session_state:
+    st.session_state['show_sidebar'] = True
+
+
 # ---- Professional Adaptive Theme with Enhanced UX ----
 st.markdown("""
 <style>
