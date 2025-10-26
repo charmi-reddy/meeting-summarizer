@@ -1,6 +1,7 @@
 import os
 import requests
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 API_KEY = st.secrets["CEREBRAS_API_KEY"]
