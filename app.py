@@ -253,26 +253,23 @@ if transcript:
                 except Exception as e:
                     st.error(f"Error: {e}")
 
-    # ---- PDF Download Section ----
-    st.markdown("#### Download Transcript as PDF")
-    pdf_filename = st.text_input("PDF filename (without extension)", value="Meeting_Transcript")
-    if st.button("Download Transcript as PDF"):
-        clean_transcript = transcript.encode("latin-1", "replace").decode("latin-1")  # Replace un-encodable chars
-        pdf = FPDF()
-        pdf.add_page()
-        pdf.set_font("Arial", size=12)
-        for line in transcript.split('\n'):
-            line_clean = line.encode("latin-1", "replace").decode("latin-1")
-            pdf.multi_cell(0, 10, line_clean)
+pdf_filename = st.text_input("PDF filename for summary (without extension)", value="Meeting_Summary")
 
-        pdf_output = io.BytesIO(pdf.output(dest='S').encode('latin-1'))
-        st.download_button(
-            label="Download PDF",
-            data=pdf_output,
-            file_name=f"{pdf_filename.strip() or 'Meeting_Transcript'}.pdf",
-            mime='application/pdf'
-        )
-
+if st.button("Download Summary as PDF"):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Arial", size=12)
+    # Replace or skip non-latin-1 characters for FPDF
+    for line in summary.split('\n'):
+        line_clean = line.encode("latin-1", "replace").decode("latin-1")
+        pdf.multi_cell(0, 10, line_clean)
+    pdf_output = io.BytesIO(pdf.output(dest='S').encode('latin-1'))
+    st.download_button(
+        label="Download PDF",
+        data=pdf_output,
+        file_name=f"{pdf_filename.strip() or 'Meeting_Summary'}.pdf",
+        mime='application/pdf'
+    )
 # ---- Footer ----
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("""
