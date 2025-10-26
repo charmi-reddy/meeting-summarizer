@@ -344,7 +344,7 @@ if transcript:
     result_col1, result_col2 = st.columns([1, 1], gap="large")
     
     with result_col1:
-        st.markdown("** Original Transcript**")
+        st.markdown(" Original Transcript")
         st.text_area(
             "Transcript display", 
             transcript, 
@@ -354,7 +354,7 @@ if transcript:
         )
     
     with result_col2:
-        st.markdown("** AI-Generated Summary**")
+        st.markdown(" AI-Generated Summary")
         
         # Manual Submit Button (no Enter key submission)
         if st.button("✨ Generate Summary", use_container_width=True, key="generate_btn"):
