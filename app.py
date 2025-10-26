@@ -5,11 +5,11 @@ from cerebras_client import call_cerebras
 st.markdown("""
 <style>
 body, .reportview-container, .main {
-    background: linear-gradient(120deg, #182848 0%, #ffa4ff 100%);
+    background: #000 !important;
     font-family: 'Roboto Mono', 'JetBrains Mono', 'Montserrat', sans-serif;
 }
 section[data-testid="stSidebar"] {
-    background: linear-gradient(120deg, #2d185c 0%, #6a4b9b 100%);
+    background: #111 !important;
     color: #fff;
 }
 [data-testid="stSidebar"] .stButton button, [data-testid="stSidebar"] .stRadio, [data-testid="stSidebar"] .stFileUploader, [data-testid="stSidebar"] .stSubheader {
@@ -17,39 +17,40 @@ section[data-testid="stSidebar"] {
     font-weight: bold;
 }
 .stTextArea textarea, .stTextInput input {
-    background: rgba(255,255,250,0.12);
+    background: #222 !important;
     border-radius: 18px;
     color: #fff;
     font-weight: bold;
-    border: 2px solid #ff4b6e;
+    border: 2px solid #333;
 }
 h1, h2, .stSubheader, .stMarkdown {
-    text-shadow: 0 2px 10px #ff85ff88;
+    text-shadow: 0 2px 10px #222;
     letter-spacing: 0.04em;
+    color: #fff !important;
 }
 .stButton button {
-    background: linear-gradient(90deg, #ff4b6e 0%, #ffa4ff 100%);
+    background: #111 !important;
     color: #fff;
     font-size: 1.1em;
     border-radius: 14px !important;
     font-weight: 700;
-    box-shadow: 0 2px 8px #db34c431;
+    box-shadow: 0 2px 8px #333;
     transition: box-shadow 0.2s;
 }
 .stButton button:hover {
-    box-shadow: 0 4px 16px #fc96c7cc;
+    box-shadow: 0 4px 16px #444;
     border: 2px solid #fff;
 }
 .stSuccess, .stWarning, .stError {
     border-radius: 18px;
-    background: rgba(255,255,255,0.13);
+    background: #1a1a1a !important;
     color: #fff !important;
     font-weight: 600;
     font-size: 1.1em;
 }
 hr {
     border: none;
-    border-top: 2px solid #ff4b6e;
+    border-top: 2px solid #333;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
 }
@@ -58,6 +59,7 @@ footer {
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # ---- Page Config ----
 st.set_page_config(
