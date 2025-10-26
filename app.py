@@ -253,23 +253,33 @@ if transcript:
                 except Exception as e:
                     st.error(f"Error: {e}")
 
-pdf_filename = st.text_input("PDF filename for summary (without extension)", value="Meeting_Summary")
+if st.button("Generate Summary", use_container_width=True):
+    with st.spinner("Analyzing transcript and generating summary..."):
+        try:
+            summary = call_cerebras(
+                f"Summarize this meeting transcript concisely, highlighting key points and action items:\n\n{transcript}", 
+                max_tokens=300
+            )
+            st.success(summary)
 
-if st.button("Download Summary as PDF"):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
-    # Replace or skip non-latin-1 characters for FPDF
-    for line in summary.split('\n'):
-        line_clean = line.encode("latin-1", "replace").decode("latin-1")
-        pdf.multi_cell(0, 10, line_clean)
-    pdf_output = io.BytesIO(pdf.output(dest='S').encode('latin-1'))
-    st.download_button(
-        label="Download PDF",
-        data=pdf_output,
-        file_name=f"{pdf_filename.strip() or 'Meeting_Summary'}.pdf",
-        mime='application/pdf'
-    )
+            # ---- PDF Download for AI Summary ----
+            pdf_filename = st.text_input("PDF filename for summary (without extension)", value="Meeting_Summary")
+            if st.button("Download Summary as PDF"):
+                pdf = FPDF()
+                pdf.add_page()
+                pdf.set_font("Arial", size=12)
+                for line in summary.split('\n'):
+                    line_clean = line.encode("latin-1", "replace").decode("latin-1")
+                    pdf.multi_cell(0, 10, line_clean)
+                pdf_output = io.BytesIO(pdf.output(dest='S').encode('latin-1'))
+                st.download_button(
+                    label="Download PDF",
+                    data=pdf_output,
+                    file_name=f"{pdf_filename.strip() or 'Meeting_Summary'}.pdf",
+                    mime='application/pdf'
+                )
+        except Exception as e:
+            st.error(f"Error: {e}")
 # ---- Footer ----
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("""
