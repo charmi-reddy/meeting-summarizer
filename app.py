@@ -262,7 +262,9 @@ if transcript:
         pdf.add_page()
         pdf.set_font("Arial", size=12)
         for line in transcript.split('\n'):
-            pdf.multi_cell(0, 10, line)
+            line_clean = line.encode("latin-1", "replace").decode("latin-1")
+            pdf.multi_cell(0, 10, line_clean)
+
         pdf_output = io.BytesIO(pdf.output(dest='S').encode('latin-1'))
         st.download_button(
             label="Download PDF",
