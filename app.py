@@ -212,7 +212,7 @@ st.set_page_config(
 )
 
 # ---- Sidebar ----
-st.sidebar.title("📋 Dashboard")
+st.sidebar.title(" Dashboard")
 st.sidebar.markdown("---")
 option = st.sidebar.radio(
     "Choose input method:",
@@ -242,7 +242,7 @@ st.markdown("""
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # ---- Input Section ----
-st.subheader("📝 Input Your Transcript")
+st.subheader(" Input Your Transcript")
 
 col1, col2 = st.columns([1.2, 1.8], gap="large")
 
