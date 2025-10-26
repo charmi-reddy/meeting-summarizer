@@ -127,7 +127,6 @@ st.markdown("""
 st.markdown("""
 <div style='text-align:center;font-size:1.28em;color:#eaeaec;'>
 Generate dazzling summaries & futuristic action items in seconds<br>
-<span style='color:#ff4b6e;font-weight:900;'>AI-Powered. Neon-Polished. Super Fast.</span>
 </div>
 """, unsafe_allow_html=True)
 
