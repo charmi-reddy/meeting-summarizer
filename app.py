@@ -257,6 +257,7 @@ if transcript:
     st.markdown("#### Download Transcript as PDF")
     pdf_filename = st.text_input("PDF filename (without extension)", value="Meeting_Transcript")
     if st.button("Download Transcript as PDF"):
+        clean_transcript = transcript.encode("latin-1", "replace").decode("latin-1")  # Replace un-encodable chars
         pdf = FPDF()
         pdf.add_page()
         pdf.set_font("Arial", size=12)
