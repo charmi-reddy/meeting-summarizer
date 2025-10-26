@@ -1,0 +1,371 @@
+Meeting Title: Product Launch Strategy & Feature Alignment
+
+**Date:** 8th October 2025
+**Time:** 10:00 AM – 12:05 PM
+**Duration:** ~2 hours
+**Attendees:**
+
+* **Riya (Project Manager)**
+* **Aditya (Product Designer)**
+* **Tanya (Marketing Lead)**
+* **Rohit (Backend Developer)**
+* **Neha (Frontend Developer)**
+* **Sahil (Data Analyst)**
+* **Karan (Founder & CEO)**
+
+---
+
+### **Transcript**
+
+**[10:00 AM – Riya]**
+Alright, good morning, everyone. Thanks for joining on time. Today’s agenda is mainly three things: finalize the launch date, lock down our MVP features, and discuss the marketing push. We’ll also do a quick walkthrough of the dashboard updates at the end.
+
+**[10:01 – Karan]**
+Morning, everyone. Let’s make sure we also talk about scalability before we set anything in stone. Last week’s demo looked great, but I’m still a bit worried about the server handling load once users start signing up.
+
+**[10:02 – Rohit]**
+Yeah, I can take that up later in the meeting. I’ve done some stress testing already, and we can handle around 2,000 concurrent users right now. But I’ve noticed some latency on the analytics API.
+
+**[10:03 – Riya]**
+Perfect. We’ll circle back to that. Tanya, do you want to start with your timeline?
+
+**[10:04 – Tanya]**
+Sure. So from a marketing standpoint, we’re planning for a **soft launch on 22nd October** and a **public launch on 1st November**. That gives us about two and a half weeks.
+But for that to work, we need a stable demo version by next Friday so that I can get the product walkthrough video recorded.
+
+**[10:05 – Neha]**
+That’s tight but doable. The new UI components are almost done — I just need final approval on the color palette from Aditya.
+
+**[10:06 – Aditya]**
+Ah yes, the color palette. So the one we discussed — the deep blue with coral accents — looks fantastic on desktop, but on mobile screens, the contrast fails accessibility standards. I’d suggest shifting to a lighter coral tone or maybe desaturating it slightly.
+
+**[10:07 – Karan]**
+Can you just show a preview? I’d rather decide right now than push it further.
+
+**[10:08 – Aditya]**
+(Shares screen) Here — left side is the current one, right side is the updated tone.
+Notice how the CTA buttons stand out better here, especially on smaller resolutions.
+
+**[10:09 – Neha]**
+Yeah, that actually looks cleaner. Also, the hover state feels smoother in this version.
+
+**[10:09 – Riya]**
+Cool. Approved then?
+
+**[10:10 – Karan]**
+Yes, go ahead with the updated version. Just make sure all mockups are finalized by EOD tomorrow. I don’t want design debates next week.
+
+**[10:10 – Aditya]**
+Got it.
+
+---
+
+**[10:11 – Riya]**
+Next: MVP feature list. Rohit, can you summarize what’s ready and what’s pending?
+
+**[10:12 – Rohit]**
+Sure.
+**Ready:**
+
+* Authentication module
+* Analytics API (partial)
+* Dashboard backend
+* Email notification service
+
+**Pending:**
+
+* Payment gateway integration
+* User feedback tracking
+* Admin analytics visualization
+
+We’re around **85% done** for backend. The payment integration is taking longer because Razorpay changed their API version last week.
+
+**[10:13 – Sahil]**
+Wait — if payment is delayed, my revenue dashboards will break too, right?
+
+**[10:14 – Rohit]**
+Yeah, but not completely. The placeholders will still display mock data. It just won’t be live transactions.
+
+**[10:14 – Karan]**
+That’s fine for soft launch. But for public launch, we need real data flowing.
+How long till that’s fixed?
+
+**[10:15 – Rohit]**
+If Razorpay documentation stays stable, maybe three days tops.
+
+**[10:15 – Riya]**
+Noted. Neha, what about the frontend side?
+
+**[10:16 – Neha]**
+Homepage — done. Dashboard — 90%. Profile section — pending responsiveness fixes.
+Also, the login animation is glitching on Safari; I’ll debug that tonight.
+
+**[10:17 – Aditya]**
+Safari always ruins everything.
+
+**[10:17 – (Everyone laughs)**
+
+**[10:18 – Tanya]**
+Can I just say — the dashboard looks absolutely stunning now. We’ll definitely make that our main visual in the promo video.
+
+**[10:19 – Karan]**
+Good. That video has to hook people in the first five seconds. The tagline “Manage smarter, not harder” — are we sticking with that?
+
+**[10:19 – Tanya]**
+Yes, unless you have a better one.
+
+**[10:20 – Karan]**
+Nope, that works. Keep it crisp and relatable.
+
+---
+
+**[10:21 – Riya]**
+Alright, let’s switch gears. Sahil, you mentioned in Slack that the engagement metrics from the closed beta were interesting?
+
+**[10:22 – Sahil]**
+Yes. So out of 120 test users, 85 actively used the app for more than three sessions. That’s roughly a **70% retention** — which is strong for a beta.
+However, the **average session duration dropped from 12 minutes to 8 minutes** last week. Probably because people explored everything already.
+
+**[10:23 – Riya]**
+Any specific feature they used the most?
+
+**[10:23 – Sahil]**
+The “Quick Tasks” widget. It’s surprisingly popular — almost 90% of sessions started there. But the “Reports” section had only 35% engagement.
+
+**[10:24 – Aditya]**
+Makes sense. Reports feel too static right now. Maybe we can add filters or visual animations to make them more interactive.
+
+**[10:25 – Karan]**
+Hold that thought — we can make that part of the November update. Don’t add new UI elements now. Let’s lock this version.
+
+**[10:25 – Riya]**
+Agreed. We’ll make a note for the next sprint.
+
+---
+
+**[10:26 – Tanya]**
+Can I bring up influencer collaborations quickly?
+
+**[10:26 – Riya]**
+Sure, go ahead.
+
+**[10:27 – Tanya]**
+So we’ve shortlisted five micro-influencers on LinkedIn and two on YouTube. Each has a tech-productivity audience. I’ll send them beta invites so they can make short “first impression” videos.
+But we’ll need a proper landing page link that tracks their traffic.
+
+**[10:28 – Sahil]**
+Yeah, I’ll create unique UTM tags for each of them.
+
+**[10:28 – Karan]**
+Good. Let’s not overpay anyone though — focus on authenticity.
+
+**[10:29 – Tanya]**
+Of course. We’re offering early access, not cash.
+
+**[10:29 – (Everyone nods)**
+
+---
+
+**[10:30 – Riya]**
+Okay, quick break? Five minutes?
+
+**[10:30 – Everyone]**
+Yeah.
+
+**[10:35 – Meeting resumes]**
+
+---
+
+**[10:35 – Riya]**
+Welcome back. Next up — scalability and performance. Rohit, your turn.
+
+**[10:36 – Rohit]**
+Alright. So I ran load tests with 1,000 to 2,000 concurrent requests. The average latency was under 800ms, which is fine. But when we crossed 3,000, the database connection pool maxed out.
+We might need to either increase the pool size or implement caching with Redis.
+
+**[10:37 – Karan]**
+Can we deploy Redis before launch?
+
+**[10:37 – Rohit]**
+If I start today, yes. But it’ll need some testing.
+
+**[10:38 – Sahil]**
+Redis will also speed up my analytics queries, by the way.
+
+**[10:38 – Riya]**
+Let’s prioritize that then. Make it part of this sprint.
+
+---
+
+**[10:39 – Neha]**
+Quick question: do we have a plan for dark mode?
+
+**[10:39 – Karan]**
+We’re not doing dark mode right now. It’s a distraction. Maybe in Q1 next year.
+
+**[10:40 – Aditya]**
+Yeah, I agree. But we can at least structure CSS variables so that adding dark mode later doesn’t break everything.
+
+**[10:41 – Neha]**
+Good idea, I’ll keep that in mind while writing the themes.
+
+---
+
+**[10:42 – Tanya]**
+Also, before I forget — can we add a testimonial carousel on the homepage? I have quotes from three beta testers already.
+
+**[10:43 – Neha]**
+That’s simple to add. I’ll do it tomorrow morning.
+
+**[10:43 – Riya]**
+Nice. That’ll make the landing page feel more “lived-in.”
+
+**[10:44 – Karan]**
+Yeah, little touches like that make a big difference.
+
+---
+
+**[10:45 – Riya]**
+Alright, let’s talk about post-launch support. We’ll need a channel for bug reports. Slack is fine internally, but for users?
+
+**[10:46 – Rohit]**
+We can use a Google Form embedded inside the “Help” section. Responses will go to a shared spreadsheet.
+
+**[10:46 – Riya]**
+Good enough for v1. Later we can move to something like Zendesk.
+
+**[10:47 – Tanya]**
+And I’ll add a small “Report a bug” link at the footer of all emails.
+
+---
+
+**[10:48 – Karan]**
+Team, I also want to discuss onboarding flow once. Right now, the user signs up and lands directly on the dashboard. No intro screens, no tour. That might confuse people.
+
+**[10:49 – Aditya]**
+We can design a three-step onboarding modal. Something lightweight — “Welcome, Connect, Customize.”
+Neha, can you code that by next week?
+
+**[10:50 – Neha]**
+Yes, as long as you send final designs by Monday.
+
+**[10:50 – Aditya]**
+Done.
+
+---
+
+**[10:51 – Riya]**
+Okay, moving into final 30 minutes. Let’s finalize the **launch checklist**.
+We’ll go line by line.
+
+**[10:52 – Riya]**
+
+1. Backend APIs stable – **Rohit**?
+   **Rohit:** 90% done, finishing payment integration this week.
+
+**[10:53 – Riya]**
+2. UI finalization – **Aditya and Neha**?
+**Aditya:** Approved palette.
+**Neha:** Finishing responsiveness and animation fixes.
+
+**[10:54 – Riya]**
+3. Analytics dashboard – **Sahil**?
+**Sahil:** Basic version ready, connecting live data once payment is active.
+
+**[10:55 – Riya]**
+4. Marketing prep – **Tanya**?
+**Tanya:** Landing page draft done, influencer outreach in progress, promo video next Friday.
+
+**[10:56 – Riya]**
+5. Server deployment – **Rohit**?
+**Rohit:** Redis setup by Thursday, staging environment up already.
+
+**[10:57 – Riya]**
+6. Onboarding flow – **Aditya & Neha**?
+**Aditya:** Wireframe Monday.
+**Neha:** Implementation by Wednesday.
+
+**[10:58 – Riya]**
+7. Final QA testing – Everyone.
+
+**[10:58 – Karan]**
+I’ll also join that session. I want to personally test onboarding and reports.
+
+---
+
+**[10:59 – Tanya]**
+Wait — what about legal compliance stuff? Privacy policy, terms?
+
+**[11:00 – Karan]**
+Good catch. I’ll talk to the lawyer this afternoon. We’ll get a draft by this weekend.
+
+**[11:01 – Tanya]**
+Perfect. I’ll link it in the footer.
+
+---
+
+**[11:02 – Neha]**
+Hey, one more thing: Are we adding cookies consent? Some users might come from the EU.
+
+**[11:02 – Karan]**
+Yes. Just add a simple banner that says “We use cookies to improve experience.” That’s enough for now.
+
+---
+
+**[11:03 – Riya]**
+Okay, any blockers from anyone?
+
+**[11:03 – Rohit]**
+Not from me. Just need access to the new AWS instance.
+
+**[11:04 – Riya]**
+I’ll share it after the meeting.
+
+**[11:04 – Sahil]**
+No blockers, but I’d love to automate weekly reports once we go live. Can we plan that for next month?
+
+**[11:05 – Riya]**
+Definitely. Let’s park that for the November sprint.
+
+---
+
+**[11:06 – Tanya]**
+I just realized — should we do a launch livestream? Like a 20-minute event?
+
+**[11:07 – Karan]**
+Hmm… maybe. We can call it “Behind the Build.” I like that. We’ll show a quick demo, talk about the journey, and thank beta users.
+
+**[11:08 – Tanya]**
+Exactly. It humanizes the brand.
+
+**[11:08 – Riya]**
+Let’s schedule that for the public launch day then. I’ll block everyone’s calendars.
+
+---
+
+**[11:09 – Aditya]**
+Since we’re doing a livestream, I can design a custom overlay — brand colors, subtle animations. It’ll look sleek.
+
+**[11:10 – Tanya]**
+Yes please! I’ll handle the script and voiceover.
+
+---
+
+**[11:12 – Karan]**
+Before we wrap up, I just want to say — this is shaping up beautifully. I know deadlines are tight, but the quality so far has been amazing.
+Remember: polish is what separates us from competitors.
+
+**[11:13 – Riya]**
+Alright. I’ll send the meeting minutes and updated timeline by evening.
+
+**[11:13 – Tanya]**
+Also, meme idea — “What my friends think I do vs. What I actually do” for the launch. We can post that on Instagram.
+
+**[11:14 – Aditya]**
+Do it. I’ll make the graphics.
+
+**[11:15 – Riya]**
+Okay, folks. Let’s officially close at 12:05 PM. Great work, team.
+
+**[12:05 PM – Meeting ends]**
+
