@@ -285,12 +285,12 @@ with col2:
 # ---- Results Area ----
 if transcript:
     st.markdown("<hr>", unsafe_allow_html=True)
-    st.subheader("📊 Analysis Results")
+    st.subheader(" Analysis Results")
     
     result_col1, result_col2 = st.columns([1, 1], gap="large")
     
     with result_col1:
-        st.markdown("**📄 Original Transcript**")
+        st.markdown(" Original Transcript")
         st.text_area(
             "Transcript display", 
             transcript, 
@@ -300,7 +300,7 @@ if transcript:
         )
     
     with result_col2:
-        st.markdown("**🤖 AI-Generated Summary**")
+        st.markdown(" AI-Generated Summary")
         
         if st.button("✨ Generate Summary", use_container_width=True):
             with st.spinner("🔄 Analyzing transcript and generating summary..."):
