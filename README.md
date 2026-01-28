@@ -1,4 +1,4 @@
-# 🧠 Meeting Summarizer
+#  Meeting Summarizer
 
 Turn messy conversations into meaning.
 
@@ -8,7 +8,9 @@ Built with the mindset of an AI/ML engineer, this project treats language as dat
 
 ---
 
-## ✨ What It Does
+## Live Link: https://meeting-summarizer-101.streamlit.app/
+
+##  What It Does
 
 - Converts long meeting transcripts into concise summaries  
 - Identifies key topics, decisions, and action items  
@@ -17,7 +19,7 @@ Built with the mindset of an AI/ML engineer, this project treats language as dat
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - Python  
 - NLP techniques  
@@ -27,7 +29,7 @@ Built with the mindset of an AI/ML engineer, this project treats language as dat
 
 ---
 
-## 🧩 Why This Exists
+##  Why This Exists
 
 Most knowledge is trapped in conversations.  
 This project liberates it.
@@ -39,7 +41,7 @@ It’s teaching machines how to listen.
 
 ---
 
-## 🚀 Use Cases
+##  Use Cases
 
 - Team meetings  
 - Interviews  
@@ -53,5 +55,3 @@ Anywhere humans talk too much and time is scarce.
 
 Built as part of my journey in AI/ML, exploring how language becomes knowledge.
 
-
-Live Link: https://meeting-summarizer-101.streamlit.app/
