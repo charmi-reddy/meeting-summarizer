@@ -1,4 +1,4 @@
-#  Meeting Summarizer
+# Clueful - Meeting Summarizer
 
 Turn messy conversations into meaning.
 
